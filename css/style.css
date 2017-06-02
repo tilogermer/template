@@ -39,7 +39,7 @@ div.wrap-content{
     display: flex;
     flex-flow: column; /* Flex items untereinander auf kleinen Bildschirmen */
 }
-nav{
+.sidebar nav{
     order: -1;
 }
 
@@ -62,4 +62,42 @@ nav{
     div.wrap-content{
         flex: 1 auto; /* auto nur für IE11 nötig */
     }
+}
+/* Base styles that apply to all menus */
+.menu-section {
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: hsl(0, 0%, 15%);
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: .6em 1em;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+    background: hsl(0, 0%, 25%);
 }    
+/* Styles for Single Level Menu */
+
+@media screen and (min-width: 30em){
+
+    .single-nav ul{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .single-nav li{
+        flex: 1 0 auto;
+        text-align: center;
+    }
+}
