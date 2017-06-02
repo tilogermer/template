@@ -1,0 +1,65 @@
+/*Basisformatierung*/
+html{
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100%;
+    max-width: 960px;
+    font: 1rem/1.5 sans-serif;
+    padding: 0.5rem;
+    margin: 0 auto;
+}
+h1{font-size: 1.5rem;}
+h2{font-size: 1.3rem;}
+h3{font-size: 1.1rem;}
+
+header, footer, main, nav, aside{
+    display: block;
+    background: #a8caf3;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+}
+/*div.wrap-content{
+    border: 1px solid #333;
+    border-radius: 0.25rem;
+}*/
+main > article{
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+}
+nav > ul {
+    padding-left: 1rem;
+}
+div.wrap-content{
+    display: flex;
+    flex-flow: column; /* Flex items untereinander auf kleinen Bildschirmen */
+}
+nav{
+    order: -1;
+}
+
+/*Mehrspaltiges Design ab 600px */
+@media screen and (min-width: 600px){
+        div.wrap-content{
+            flex-flow: row; /* Flex items nebeneiander */
+        }
+    nav, aside{
+        flex: 0 0 10rem; /* Sidebars mit fester Breite, ggfs. ändern */
+    }
+    main{
+        flex: 1; /* Optional, main ist auch ohne flex:1 schon flexibel */
+    }
+    /* Sticky Footer */
+    body{
+        display: flex;
+        flex-flow: column;
+    }
+    div.wrap-content{
+        flex: 1 auto; /* auto nur für IE11 nötig */
+    }
+}    
